@@ -1,0 +1,29 @@
+@import 'reset', 'variables';
+
+body {
+	background-color: $black-color;
+	max-width: 100dvw;
+	min-height: 100dvh;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	gap: 64px;
+	width: 100%;
+	height: 100%;
+	min-height: 100dvh;
+}
+
+b {
+	font-weight: bold;
+}
+
+.photo {
+	border: 6px solid white;
+	width: auto;
+	height: auto;
+	min-height: 300px;
+	max-height: 500px;
+	object-fit: contain;
+}
