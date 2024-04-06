@@ -18,7 +18,7 @@ export function usePhotos() {
 		parallel: false
 	})
 
-	const photos: PhotoDTO[] = useMemo(() => Array().concat(...(data || [])), [data])
+	const photos: PhotoDTO[] = Array().concat(...(data || []))
 
 	const photosByAuthor: PhotosByAuthor = useMemo(
 		() =>
