@@ -1,0 +1,56 @@
+@import '../styles/variables.scss';
+
+.photo-polaroid {
+	$padding: 16px;
+
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: $primary-color;
+	padding: $padding;
+	aspect-ratio: 1/1;
+	width: auto;
+	gap: 8px;
+	height: auto;
+	height: 500px;
+	color: black;
+
+	&::before {
+		position: absolute;
+		right: $padding;
+		bottom: $padding;
+		width: 20px;
+		height: auto;
+		content: url('/icon.svg');
+	}
+
+	&:hover::before {
+		animation: Rotate 3s linear infinite;
+	}
+
+	.photo-title {
+		font-weight: bold;
+		font-size: 1.25rem;
+	}
+
+	.photo-info {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		width: 100%;
+		max-width: 80%;
+		height: 100%;
+		text-wrap: balance;
+		justify-content: flex-end;
+	}
+}
+
+@keyframes Rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
