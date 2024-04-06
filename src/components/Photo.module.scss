@@ -7,14 +7,17 @@
 	position: relative;
 	flex-direction: column;
 	justify-content: space-between;
+	gap: 8px;
 	background-color: $primary-color;
 	padding: $padding;
-	aspect-ratio: 1/1;
 	width: auto;
-	gap: 8px;
 	height: auto;
-	height: 500px;
 	color: black;
+
+	@media (width >= 500px) {
+		aspect-ratio: 1/1;
+		height: 500px;
+	}
 
 	&::before {
 		position: absolute;
@@ -37,12 +40,12 @@
 	.photo-info {
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-end;
 		gap: 4px;
 		width: 100%;
 		max-width: 80%;
 		height: 100%;
 		text-wrap: balance;
-		justify-content: flex-end;
 	}
 }
 

@@ -33,7 +33,9 @@ export default function PhotoModal({ params: { id } }: { params: { id: string } 
 			aria-describedby='modal-description'
 		>
 			<Photo polaroidEffect {...photo}>
-				<Link href='#' target='_blank'>↗️</Link>
+				<Link href='#' target='_blank' className='underline'>
+					Ver en pagina nueva
+				</Link>
 			</Photo>
 		</Modal>
 	)

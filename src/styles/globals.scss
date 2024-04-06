@@ -21,9 +21,18 @@ b {
 
 .photo {
 	border: 6px solid white;
-	width: auto;
-	height: auto;
-	min-height: 300px;
+	width: fit-content;
+	height: fit-content;
+	min-width: 300px;
 	max-height: 500px;
 	object-fit: contain;
+}
+
+a.underline {
+	transition: all 200ms ease-out;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
 }
