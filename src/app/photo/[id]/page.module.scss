@@ -1,0 +1,22 @@
+.page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	margin: auto;
+	width: fit-content;
+	color: white;
+
+	.nav {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		a[aria-disabled='true'] {
+			opacity: 0.5;
+			cursor: default;
+			pointer-events: none;
+		}
+	}
+}
