@@ -1,0 +1,155 @@
+stylelint-disable no-descending-specificity
+
+/* Definimos las Custom properties */
+:root {
+	/* Colores */
+	--negro: #393939;
+}
+
+/* (Opcional) Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--negro: #ececec;
+	}
+}
+
+/* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*,
+*::before,
+*::after {
+	vertical-align: baseline;
+	box-sizing: border-box;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+*::before,
+*::after {
+	display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	object-fit: cover; /* (Opcional) */
+	object-position: center center; /* (Opcional) */
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+	display: block;
+	color: inherit;
+	font-size: inherit;
+	text-decoration: none;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+	display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+	list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+	color: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	text-decoration: none;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+	content: '';
+	content: none;
+}
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+::selection {
+	background-color: var(--negro, #393939);
+	color: var(--blanco, #ececec);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+	display: block;
+	appearance: none; /* (Opcional) */
+	outline: none;
+	background-color: transparent;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	hyphens: auto;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+	fill: currentcolor;
+	display: block;
+	width: fit-content;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+	font-smooth: always; /* (Opcional) */
+	-webkit-font-smoothing: antialiased; /* (Opcional) */
+	-moz-osx-font-smoothing: grayscale; /* (Opcional) */
+	min-height: 100vh;
+	color: var(--negro, #393939);
+	font-size: 100%;
+	hyphens: auto; /* (Opcional) */
+}
