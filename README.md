@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Instrucciones para iniciar
 
-## Getting Started
+1. Instalar dependencias `pnpm install`
+2. Compilar web `pnpm build`
+3. Iniciar servidor `pnpm start`
 
-First, run the development server:
+> [!NOTE]
+>
+> Si no desea utilizar `pnpm` como gestor de paquetes, es libre de usar cualquier alternativa, como `npm` o `yarn`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Enfoque
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Dividi el proyecto como ejercicio mental en 4 secciones:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### 1. Consultas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Utilice el principio de Stale While Revalidate a traves de la libreria [swr](https://swr.vercel.app/) para mejorar el performance en las consultas.
 
-## Learn More
+Cree algunos hooks para una obtencion de datos mejor.
 
-To learn more about Next.js, take a look at the following resources:
+#### 2. Renderizado
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Utilice 3 tipos de renderizado diferentes SSG, SSR y CSR. Permitiendo ser una pagina bastante flexible y adaptable. Segun la vista o componente nos encontraremos con Hooks como useMemo o useCallback para mejorar el performance entre re renderizados.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Utilice para los estilos SASS y CSS Modules.
 
-## Deploy on Vercel
+Implemente animaciones con la libreria [animate.css ↗️](https://animate.style/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### 3. Filtrado
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Desarrolle un sistema de filtro bastante sencillo al agrupar del lado del cliente las fotos por cada author para luego una vez haya un parametro de consulta `author` en la url filtrarlo.
+
+#### 4. Mas alla
+
+Decidi ir mas alla implementando un Infinite Scroll, un modal de MUI renderizado con [Intercepting Routes](https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes) y mezclando renderizados estaticos, de servidor y de cliente para desafiar un poco mis conocimientos sobre el framework.
+
+### Decision del diseño
+
+Para el diseño aplicado quize irme por una linea vintage ya que hablamos de fotos. Me apoye un poco de [eminente ↗️](https://eminente.art/) al ser un proyecto que me gusta mucho. Tome como referencia una grid de fotos de eminente [Photos Grid ↗️](https://www.behance.net/gallery/186242447/Eminente/modules/1052917663) para el estilo vintage que queria trasnmitir.
